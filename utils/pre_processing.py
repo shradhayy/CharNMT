@@ -11,8 +11,9 @@ def textwrite(path, data):
 #     textwrite('test.txt', ['cháu lên ba', 'cháu vô mẫu giáo'])
 
 def pop_range(x, y, min_length=0, max_length=1e10):
-    i = 0
+##    i = 0
     new_x, new_y = list(), list()
+    print(len(x))
     for i in range(len(x)):
 ##        if (min_length <= len(x[i]) <= max_length) and (min_length <= len(y[i]) <= max_length):
         new_x.append(x[i])
