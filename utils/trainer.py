@@ -109,7 +109,7 @@ class Trainer:
                         lr = config.learning_rate
                     self.loss_smooth = 0.9*self.loss_smooth + 0.1*loss.item()
 #                     accuracy = 0.9*accuracy + 0.1*torch.sum(torch.argmax(b,axis=-1)==Y_batch)/len(A)
-                    pbar.set_description(f"epoch: {epoch+1} | train loss: {self.loss_smooth:.5f}  | lr: {lr:e}") # | Accuracy:{accuracy:.5f}
+                    pbar.set_description(f"epoch: {epoch+1} | train loss: {self.loss_smooth:.5f}  | lr: {lr:e} | Accuracy:{accuracy:.5f}")
                 
                 if not is_train:
                     test_loss = float(np.mean(losses))
