@@ -117,9 +117,11 @@ class Trainer:
                     return test_loss
 
                 if config.ckpt_n_print_iter is not None:
+                    print("Not None")
                     if it % config.ckpt_n_print_iter == 0:
                         print(model.generate_output(self.test_dataset, data, top_k=3, temperature=0.5))
                         if config.ckpt_path is not None:
+                            print("Loading saved checkpoint...")
                             if self.loss_smooth < self.min_loss:
                                 self.min_loss = self.loss_smooth
                                 pickle(config.ckpt_path, model.state_dict()) # save
